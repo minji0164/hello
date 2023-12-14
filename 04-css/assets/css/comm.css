@@ -1,0 +1,155 @@
+@import url(fonts.css);
+@import url(reset.css);
+
+
+/* 전체 선택자 */
+
+/* 클래스 선택자 */
+.desc2 {
+    font-size: 22px;
+    color: blue;
+}
+.desc1 {
+    color: aquamarine;
+}
+
+/* 태그 클래스 선택자,
+클래스보다 1점 높음(권장하지 않음) */
+p.desc1 {
+    color: #a5c483;
+}
+
+/* 아이디 선택자 */
+#main {
+    width: 500px; height: 700px;
+    background-color: pink;
+}
+.header {
+    height: 100;
+    background-color: #fff;
+}
+.header.dark {
+    background-color: #a5c483; 
+}
+
+.input {
+    width: 300px; height: 100px;
+    background-color: #fff;
+}
+.input:focus {
+    background-color: black;
+    color: orange;
+}
+
+.bbs li a {
+    color: #fff;
+}
+.bbs li:first-child {
+    background-color: yellow;
+}
+.bbs li:first-child a {
+    color: black;
+}
+
+.bbs li:last-child {
+    background-color: orange;
+}
+.bbs li:last-child a {
+    color: blue;
+}
+.bbs li:nth-child(2) {
+    background-color: red;
+}
+.bbs li:nth-child(2) a {
+    color: yellow;
+}
+.goto li::before {
+    content: '>';
+}
+.goto li::after {
+    content: '<';
+}
+.goto li a::before {
+    content: '';
+    display: block;
+    width: 50px; height: 50px;
+    background: url(./img/naver_logo.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+.goto li a::after {
+    content: '';
+    display: block;
+    width: 50px; height: 50px;
+    background: url(./img/naver_logo.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+.goto li a {
+    color: magenta;
+}
+.goto a {
+    color: #a5c483 !important;
+}
+
+.icon li:first-child::before {
+    content: "\f015";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+.icon li:first-child a::after {
+    content: "+";
+}
+.icon li:nth-child(2)::before {
+    content: "\f002";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+.icon li:nth-child(3)::before {
+    content: "\f09b";
+    font-family: 'Line Awesome Brands';
+}
+.icon li:nth-child(4)::before {
+    content: "\f16d";
+    font-family: 'Line Awesome Brands';
+}
+.icon li:nth-child(5)::before {
+    content: "\f167";
+    font-family: 'Line Awesome Brands';
+}
+.icon li:last-child::after {
+    content: "\f535";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+
+/* font */
+/* font-size : fz16 */
+.font-size1 {
+    font-size: 20px;
+}
+.font-size2 {
+    font-size: 1.25em;
+    /* 12px 기준으로 1.25em은 15px */
+    /* 부모 기준 */
+}
+.font-size3 {
+    /* 20px */
+    font-size: 1.666em;
+}
+.font-size4 {
+    font-size: 1.666em;
+}
+.font-size5 {
+    font-size: 1.666rem;
+}
+.font-size6 {
+    font-size: 1.666rem;
+}
+.font-size7 {
+    font-size: 10vw;
+}
+.font-f1 {
+    font-family: 'Sofia', cursive;
+}
+.font-f2 {
+    font-family: 'Nova Square', sans-serif;
+}

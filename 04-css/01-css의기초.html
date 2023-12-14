@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css의 기초</title>
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="./assets/css/comm.css">
+    <style>
+        /* 태그 선택자(우선순위:인라인->클래스->태그) */
+        p {
+            font-size: 20px;
+            color: #FF5722;
+        }
+    </style>
+</head>
+<body>
+    <h1>css의 기초</h1>
+
+    <!-- 인라인 방식(우선순위가 제일 높다) -->
+    <strong style="font-size: 30px; font-weight: normal;">Lorem ipsum dolor sit amet.</strong>
+    
+    <!-- 클래스 선택자(우선순위가 인라인 다음으로 높다) -->
+    <p class="desc1">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <p class="desc2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Unde soluta facilis dolorem nulla asperiores expedita odit
+        debitis sit ipsam eveniet!
+    </p>
+
+    <!-- 아이디 선택자 -->
+    <div id="main">
+        <div class="header dark">
+            <input type="search" title="검색" class="input" />
+        </div>
+
+        <div class="main">
+            <section class="bbs">
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                </ul>
+            </section>
+            <section class="goto">
+                <!-- 디자인 요소는 css로 삽입 -->
+                <ul>
+                    <li><a href="#">바로가기1</a></li>
+                    <li><a href="#">바로가기2</a></li>
+                    <li><a href="#">바로가기3</a></li>
+                    <li><a href="#">바로가기4</a></li>
+                </ul>
+            </section>
+            <!-- 뉴스 운영성 이미지는 이미지 태그로 삽입 -->
+            <ul>
+                <li><a href="#">
+                    <img src="./img/naver_img.jpeg" alt="">
+                    뉴스 텍스트
+                </a></li>
+            </ul>
+
+            <ul class="icon">
+                <li><a href="#">home</a></li>
+                <li>search</li>
+                <li>github</li>
+                <li>instagram</li>
+                <li>youtube</li>
+                <br />
+                <li>키위새</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+</head>
+<body>
+    <h1>background</h1>
+
+
+    <h2>background-color</h2>
+
+    <div class="bg1">
+        <div class="box1"></div>
+    </div>
+    <style>
+        .bg1 {
+            height: 100px;
+            background: rebeccapurple;
+        }
+        .bg1 .box1 {
+            height: 50px;
+            background: rgba(128, 255, 212, 0.5)
+        }
+    </style>
+
+
+    <h2>background-image & background-repeat & background-position & background-attachment</h2>
+
+    <div class="bg2">
+        <style>
+            .bg2 {
+                height: 440px;
+                /* background-image: url('./images/map.jpg');
+                background-repeat: no-repeat;
+                background-position: -700px 0;
+                background-attachment: fixed;
+                background: yellow; */
+
+                background: yellow url(./images/map.jpg) no-repeat -700px 0 fixed;
+            }
+        </style>
+    </div>
+
+    <div class="bg3">
+        <style>
+            .bg3 {
+                height: 500px;
+                background: lightgoldenrodyellow;
+                background-image: url('./images/whale.jpg');
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+        </style>
+    </div>
+
+
+    <h2>background-size</h2>
+
+    <div class="bg4"></div>
+     <style>
+        .bg4 {
+            width: 300px;
+            height: 150px;
+            background-color: green;
+            background-image: url(./images/youtube-lg.png);
+            background-repeat: no-repeat;
+            background-position: 0% 50%;
+            /* background-size: 100% auto; */
+            /* 배경이 잘려나가지 않고 박스 안에 꽉 차게 */
+            /*contain은 로고나 이미지 */
+            background-size: contain;
+        }
+     </style>
+
+    <div class="bg5"></div>
+     <style>
+        .bg5 {
+            width: 300px;
+            height: 150px;
+            /* 배경이 잘려나가고 이미지를 꽉 차게 */
+            /* cover는 배경 이미지를 쓸 때 */
+            background: yellowgreen url(./images/map.jpg) no-repeat 0 0 / cover;
+        }
+     </style>
+
+
+     <h2>image-sprites</h2>
+
+     <a href="#" class="link home">홈</a>
+     <a href="#" class="link prev">이전</a>
+     <a href="#" class="link next">다음</a>
+
+    <style>
+        .link {
+            display: inline-block;
+            height: 44px;
+            text-indent: -9999px;
+            background-image: url(./images/img_navsprites.gif);
+            background-repeat: no-repeat;
+        }
+
+        .home {
+            width: 46px;
+            background-position: 0 0;
+        }
+        .prev {
+            width: 43px;
+            background-position: -47px 0;
+        }
+        .next {
+            width: 43px;
+            background-position: -91px 0;
+        }
+    </style>
+    
+    <div class="webtoon">네이버 웹툰</div>
+    <style>
+        .webtoon {
+            width: 63px;
+            height: 59px;
+            text-indent: -9999px;
+            background: url(./images/sp_main.d5b6c236.png) no-repeat -463px -434px;
+        }
+    </style>
+
+
+</body>
+</html>

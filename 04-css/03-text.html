@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+</head>
+<body>
+    <h1>text</h1>
+
+    <div class="text1">글씨정렬</div>
+    <style>
+        .text1 {
+            width: 500px;
+            background: yellow;
+        }
+    </style>
+
+
+    <div class="text2">가운데 정렬</div>
+    <style>
+        .text2 {
+            width: 500px;
+            text-align: center;
+            background: orange;
+        }
+    </style>
+
+
+    <!-- div는 블록요소 -->
+    <!-- span은 인라인요소 -->
+    <div class="box1">
+        <span class="box2">인라인 요소</span>
+    </div>
+    <style>
+        .box1 {
+            /* vertical-align: middle; */
+            text-align: center;
+            width: 500px;
+            height: 200px;
+            background: palevioletred;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            line-height: 200px;
+            background: thistle;
+        }
+    </style>
+
+
+    <h2>vertical-align : middle</h2>
+
+    <img src="./images/whale.jpg" alt="" class="img-w"> 네이버 웨일
+    <style>
+        .img-w {
+            /* display: block; 블럭 요소는 안 됨 */
+            /* vertical-align : 인라인 요소만 가능 */
+            vertical-align: middle;
+        }
+    </style>
+
+
+    <h2>text-decoration &#38; text tranformation &#38; letter-spacing</h2>
+
+    <a href="#">go to</a>
+    <style>
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+        }
+    </style>
+
+
+    <h2>text indentation</h2>
+
+    <div class="indent">글씨 날리기</div>
+    <!-- 일반인에게는 안 보이고 시각장애인에게는 들리게 -->
+    <style>
+        .indent {
+            text-indent: -9999px;
+        }
+    </style>
+
+
+    <h2>line height &#38; letter-spacing</h2>
+
+    <div class="txt1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, eos.</div>
+    <style>
+        .txt1 {
+            font-size: 100px;
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+    </style>
+
+
+    <h2>white space & overflow & text-overflow</h2>
+
+    <div class="txt2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero dicta aliquid aliquam facilis accusamus, optio asperiores dolorum possimus aspernatur temporibus.</div>
+    <style>
+        .txt2 {
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+
+
+    
+</body>
+</html>

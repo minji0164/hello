@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>form 관련 태그</title>
+</head>
+<body>
+    <h1>form 관련 태그</h1>
+    
+    <h2>form 기초</h2>
+
+    <form action="">
+        <fieldset>
+            <legend>폼 타이틀</legend>
+            아이&nbsp;디&amp;
+            <input type="text" title="아이디"
+            maxlength='4'placeholder="아이디를 입력하세요(8자 이하)"
+            required autofocus
+            autocomplete="on" /> <br />
+
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required/> <br />
+
+            <label for="pw">비밀번호</label> 
+            <input type="password" id="pw" name="pw" required /> <br><br>
+            
+            라디오
+            <input type="radio" name="group" id="html">
+            <label for="html">html</label> 
+            <input type="radio" name="group" id="css">
+            <label for="css">css</label> 
+            <input type="radio" name="group" id="js">
+            <label for="js">js</label> 
+            <br  /><br  />
+
+            체크박스
+            <input type="checkbox" name="consent1" id="consent1">
+            <label for="consent1">동의1</label>
+            <input type="checkbox" name="consent2" id="consent2">
+            <label for="consent2">동의2</label>
+            <input type="checkbox" name="consent3" id="consent3">
+            <label for="consent3">동의3</label>
+            <br /><br />
+
+            <label for="email">이메일</label>
+            <input type="email" name="email" id="email" /> <br /><br /> 
+
+            <label for="file">첨부파일</label>
+            <input type="file" name="file" id="file"> <br /><br /> 
+
+            <label for="number"></label>
+            <input type="number" name="number" id="munber" disabled> <br /><br /> 
+            
+            <label for="sel">계절 선택</label>
+            <select name="sel" id="sel" multiple>
+                <option value="봄">봄</option>
+                <option value="여름" selected>여름</option>
+                <option value="가을">가을</option>
+                <option value="겨울">겨울</option> <br /><br />
+            </select>
+
+            <label for="text">글쓰기</label>
+            <textarea name="text" id="text" rows="10" cols="30"></textarea> <br /><br />
+        
+
+            <!-- 기능 없는 버튼 -->
+            <!-- a : 페이지 전환용 -->
+            <!-- input:button, button : 동적 처리 -->
+
+            <input type="button" value="input 버튼" />
+            <button>button 타입 버튼</button><br/><br/>
+
+            <input type="submit" value="내용 전송">
+            <input type="reset" value="취소">
+        </fieldset>
+    </form>
+</body>
+</html>

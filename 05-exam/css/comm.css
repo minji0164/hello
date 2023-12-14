@@ -1,0 +1,137 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #222328;
+    font-size: 16px;
+    box-sizing: border-box;
+    list-style: none;
+ }
+
+
+ .wrap {
+    margin: auto;
+    width: 1200px;
+ }
+
+
+ header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+ }
+ #logo a {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+ }
+
+ #gnb .depth1 {
+    display: flex;
+    gap: 50px;
+ } 
+ #gnb .depth1:hover {
+   background: indianred;
+ }
+ #gnb .depth1:hover .depth2 {
+   display: block;
+   background: #fff;
+ }
+
+ #gnb .depth1 > li > a {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    padding: 0 20px;
+ }
+ #gnb .depth2 {
+    display: none;
+ }
+
+
+ .slide ul {
+    display: flex;
+ }
+ .slide ul a {
+    display: block;
+ }
+ .slide ul img {
+    display: block;
+    /* img는 인라인요소라
+    스페이스키가 먹음 블록으로 바꿔줘야한다 */
+ }
+ #main {
+
+   justify-content: space-between;
+   display: flex;
+   gap: 20px;
+   height: 200px;
+ }
+.sec-g {
+   padding: 10px 0;
+   /* width: 33.333%; */
+   flex-grow: 1; 
+   flex-basis: 0;
+   /* 1 : true(참), 0 : false(거짓) */
+ }
+ .sec-g .sec-tit {
+   margin-top: 10px;
+   font-size: 20px;
+ }
+ #footer {
+   align-items: center;
+   justify-content: space-between;
+   display: flex;
+   height: 100px;
+ }
+ /* bbs */
+ .sec-bbs .list-bbs a {
+   /* padding: 5px 0; */
+   display: block;
+ }
+ .sec-bbs .list-bbs li::before {
+   content: '';
+   width: 5px;
+   height: 5px;
+   margin-right: 10px;
+   display: block;
+   background: #000;
+ }
+ .sec-bbs .list-bbs li {
+   align-items: center;
+   display: flex;
+ }
+ 
+ /* ,를 넣어서 복수클래스로 만들 수 있음 */
+.sec-goto .sec-tit,
+.sec-bnr .sec-tit {
+   margin-top: 0;
+   text-indent: -9999px;
+   line-height: 0;
+   font-size: 0;
+ }
+ .sec-goto .list-goto {
+   align-content: space-between;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   display: flex;
+   height: 100%
+ }
+ .sec-goto .list-goto li {
+   width: 48%;
+   height: 48%;
+   background: thistle;
+ }
+ .sec-goto .list-goto a {
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+ }
+ #footer {
+   border-top: 1px solid #000;
+ }

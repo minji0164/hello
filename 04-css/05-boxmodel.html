@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+</head>
+<body>
+    <h1>Box Model</h1>
+
+    <div class="box1">컨텐츠</div>
+
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background: brown;
+            border: 5px solid #000;
+            padding-top: 50px; padding-left: 100px;
+            margin-left: 50px;
+        }
+    </style>
+
+
+    <h2>width(default: 100%) & height(default: 0%)</h2>
+
+    <!-- div는 block 요소 -->
+    <div class="box2">block</div>
+    <div class="box2">block</div>
+    <div class="box2">block</div>
+    <!-- span은 inline 요소 -->
+    <span class="box3">inline</span>
+    <span class="box3">inline</span>
+    <span class="box3">inline</span>
+    <!-- inline-block 요소 -->
+    <span class="box4">inline-block</span>
+    <span class="box4">inline-block</span>
+    <span class="box4">inline-block</span>
+
+    <style>
+        .box2 {
+            width: 50%;
+            /* width: 300px; */
+            /* height: 100px; */
+            background-color: skyblue;
+        }
+        .box3 {
+            /* width: 100%;
+            height: 50%; */
+            /* width: 300px; */
+            /* height: 100px; */
+            background-color: khaki;
+        }
+        .box4 {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background: hotpink;
+        }
+    </style>
+
+
+    <h2>max-width(최대 가로 사이즈) & max-height(최대 세로 사이즈)</h2>
+    <h2>min-width & min-height(최소)</h2>
+
+    <div class="maxw">max-w max-h</div>
+    <div class="minw">min-w min-h</div>
+
+    <style>
+        .maxw {
+            max-width: 1280px;
+            max-height: 500px;
+            height: 600px;
+            margin: 0 auto;
+            background: coral;
+        }
+        .minw {
+            min-width: 320px;
+            min-height: 100vh;
+            background: seagreen;
+        }
+    </style>
+
+
+    <h2>border</h2>
+
+    <div class="border">border</div>
+
+    <style>
+        .border {
+            height: 300px;
+            background: #eee;
+            /* border-width: 5px;
+            border-style: solid;
+            border-color: rgba(212, 130, 130, 0.5); */
+            border: 5px solid rgba(212, 130, 130, 0.5);
+            /* border-bottom: 5px solid rgba(212, 130, 130, 0.5); */
+            /* border: none; 으로 보더를 없앨 수 있다*/
+            /* border-radius: 300px; */
+        }
+    </style>
+
+
+    <h2>border-radius</h2>
+
+    <div class="redius"></div>
+
+    <style>
+        .redius {
+            border-radius: 100%;
+            width: 200px;
+            height: 200px;
+            background: #eee;
+        }
+    </style>
+
+
+    <h2>padding</h2>
+
+    <div class="padding">padding</div>
+    <div class="padding">padding 안녕하세요</div>
+    <div class="padding">padding</div>
+
+    <style>
+        /* 유동적인 버튼을 생성하고 싶을 display를 inline-block으로 바꾼다
+        width 100% 해제
+        padding으로 여백 조절 */
+        .padding {
+            display: inline-block;
+            padding: 20px;
+            background: #eee;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <div class="padding2">padding2</div>
+
+    <style>
+        .padding2 {
+            display: inline-block;
+            padding: 20px 30px;
+            margin-top: 50px;
+            border: 1px solid #000000;
+            background: wheat;
+        }
+    </style>
+
+
+    <h2>margin</h2>
+
+    <div class="margin">margin</div>
+    <div class="margin box">margin</div>
+    <div class="margin">margin</div>
+
+    <style>
+        .margin {
+            margin: 60px;
+            border: 1px solid #000;
+            background: indianred;
+        }
+        .box {
+            margin-top: 120px;
+        }
+    </style>
+
+    <div class="margin2">block요소 가운데 정렬
+        <div class="margin3">가운데 정렬</div>
+    </div>
+    
+    <style>
+        .matgin3 {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .margin2 {
+            margin: auto;
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            background: antiquewhite;
+            text-align: center;
+        }
+    </style>
+
+
+    <div class="wrap">
+        <header>
+            <div class="header">header</div>
+        </header>
+        <div class="slide">slide</div>
+        <div class="main">main</div>
+        <div class="footer">footer</div>
+    </div>
+
+    <style>
+        .wrap {
+            width: 600px;
+            margin: auto;
+            background: #eee;
+            text-align: center;
+        }
+        .header {
+            height: 100px;
+            padding: 30px;
+            border-bottom: 5px solid #000;
+            box-sizing: border-box;
+            /* box-sizing: content-box; */
+        }
+        .slide {
+            height: 300px;
+            border: 5px solid #000;
+        }
+        .main {
+            height: 200px;
+            margin: 20px;
+            border: 5px solid #000;
+        }
+        .footer {
+            height: 100px;
+            border: 5px solid #000;
+        }
+    </style>
+
+
+
+</body>
+</html>
