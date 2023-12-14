@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+</head>
+<body>
+    <h1>float</h1>
+
+
+    <h2>float-left, right</h2>
+
+    <div class="box1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box2">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, numquam!</div>
+
+    <style>
+        .box2 {
+            clear: both;
+            border: 3px solid;
+        }
+        .box1 .item {
+            float: right;
+            /* float: left; */
+            /* display: inline-block; */
+            height: 100px;
+            width: 100px;
+            background: yellowgreen;
+        }
+    </style>
+
+    <br><br><br>
+
+    <h2>float layout</h2>
+
+    <div class="wrap">
+        <header id="header">
+            <h1 id="logo">logo</h1>
+            <nav id="gnb">
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="slide">
+            <ul>
+                <li>slide1</li>
+                <li>slide2</li>
+                <li>slide3</li>
+            </ul>
+        </div>
+        <main id="main">
+            <section class="sec-g">공지사항</section>
+            <section class="sec-g">배너</section>
+            <section class="sec-g">바로가기</section>
+        </main>
+        <footer id="footer">
+            <div class="ft-logo">logo</div>
+            <div class="copyright">copyright</div>
+            <div class="sns">sns</div>
+        </footer>
+    </div>
+
+    <style>
+        .wrap {
+            margin: 0 auto;
+            width: 1280px;
+            background: #eee;
+        }
+
+        #header {
+            /* 부모가 자식의 높이값을 인식하려면
+            1. 부모에게 높이값을 지정해주기
+            2. over-flow : auto  */
+            height: 100px;
+            background: #e77777;
+        }
+
+        #logo {
+            float: left;
+            background: #555;
+        }
+
+        #gnb {
+            float: right;
+            background: #333;
+        }
+
+        #gnb li {
+            float: left;
+        }
+        
+        .slide ul {
+            overflow: auto;
+        }
+        .slide li {
+            float: left;
+        }
+
+        #main::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .sec-g {
+            float: left;
+            width: 30%;
+            height: 200px;
+            background: orange;
+        }
+
+        .sec-g + .sec-g {
+            margin-left: 5%;
+        }
+
+        #footer {
+            height: 100px;
+            background: indianred;
+        }
+
+        .ft-logo {
+            float: left;
+        }
+        .copyright {
+            text-align: center;
+        }
+        .sns {
+            margin-top: -20px;
+            float: right;
+        }
+
+    </style>
+</body>
+</html>
