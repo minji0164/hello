@@ -30,36 +30,57 @@
     height: 40px;
  }
 
- #gnb .depth1 {
-    display: flex;
-    gap: 50px;
- } 
- #gnb .depth1:hover {
-   background: indianred;
- }
- #gnb .depth1:hover .depth2 {
-   display: block;
-   background: #fff;
- }
+#gnb .depth1 {
+  display: flex;
+} 
+/* #gnb .depth1:hover .depth2 전체 메뉴 보이게 */
+/* 각각 메뉴 보이게 */
+#gnb .depth1 li:hover .depth2 {
+  display: block;
+  background: #fff;
+}
 
- #gnb .depth1 > li > a {
-    align-items: center;
-    display: flex;
-    height: 100px;
-    padding: 0 20px;
- }
- #gnb .depth2 {
-    display: none;
- }
+#gnb .depth1 > li > a {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  padding: 0 50px;
+}
+#gnb .depth1 li {
+  position: relative;
+}
+#gnb .depth2 {
+  padding: 10px 0;
+  text-align: center;
+  right: 0;
+  left: 0;
+  top: 100px;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+}
 
+#gnb .depth2 a {
+  padding: 3px 0;
+  display: block;
+}
 
- .slide ul {
-    display: flex;
+.slide {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide ul {
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: flex;
  }
- .slide ul a {
+.slide ul a {
     display: block;
  }
- .slide ul img {
+.slide ul img {
     display: block;
     /* img는 인라인요소라
     스페이스키가 먹음 블록으로 바꿔줘야한다 */

@@ -17,15 +17,41 @@
 
     <style>
         .box1 {
-            overflow: hidden;
+            overflow-x: auto;
+            border: 5px solid #000;
             width: 100px;
             display: flex;
         }
 
         .item {
+            flex-shrink: 0;
+            height: 100px;
             width: 100px;
             background: #999;
         }
     </style>
+
+
+    <h2>이용약관</h2>
+
+    <div class="container">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illum?
+    </div>
+
+    <style>
+        .container {
+            overflow: auto;
+            height: 100px;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 10px solid #000;
+        }
+    </style>
+
 </body>
 </html>

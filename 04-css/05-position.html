@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .container {
+            position: relative;
+            background: lightblue;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>position</h1>
+    <div class="container relative">
+        <div class="inner">
+            <!-- fixed의 기준은 body -->
+            <!-- <div class="fixed">fixed</div> -->
+            <div class="box sta">static</div>
+            <div class="box rel1">relative1</div>
+            <div class="box rel2">relative2</div>
+            <div class="box rel3">relative3</div>
+            <!-- relative : 나 자신이 기준
+            기준을 절대값으로 사용하지 말아야 한다 -->
+            <style>
+                /* .rel2 {
+                    top: 400px;
+                    right: 0;
+                } */
+                .rel1,
+                .rel2,
+                .rel3 {
+                    position: relative;
+                }
+            </style>
+            <div class="box abs1">absolute1</div>
+            <div class="box-rel">
+                <div class="box abs2">absolute2</div>
+                <div class="box abs3">absolute3</div>
+            </div>
+        </div>    
+        <style>
+            .inner {
+                position: relative;
+            }
+            .box-rel {
+                right: 0;
+                bottom: 50px;
+                position: absolute;
+                height: 500px;
+                width: 500px;
+                background: orange;
+            }
+            .abs2 {
+                right: 0;
+                bottom: 0;
+                position: absolute;
+            }
+            .abs3 {
+                left: -120px;
+                top: 100px;
+                position: absolute;
+            }
+            /* absolute : 절대값으로 위치 지정 */
+            /* 기준은 나와 가장 가까운 부모 */
+            .abs1 {
+                z-index: 1;
+                position: absolute;
+                top: 100px;
+                right: 0;
+            }
+        </style>
+
+
+        <style>
+            .fixed {
+                z-index: 1;
+                /* right 값으로 해도 됨 */
+                /* right: 0; */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 70px;
+                position: fixed;
+                background: khaki;
+            }
+        </style>
+
+        <div class="rel">
+            <div class="sticky sticky1">sticky</div>
+        </div>
+        <div class="rel">
+            <div class="sticky sticky1">sticky</div>
+        </div>
+        <div class="rel">
+            <div class="sticky sticky1">sticky</div>
+        </div>
+    </div>
+
+    <style>
+        .sta {
+            position: static;
+        }
+        .rel {
+            position: relative;
+            height: 100vh;
+            background: lightsalmon;
+            border: 5px solid yellow;
+        }
+        .sticky {
+            left: 0;
+            top: 0;
+            position: sticky;
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+    </style>
+    <h2>가운데정렬</h2>
+
+    <div class="center">
+        <div class="item">가운데정렬</div>
+    </div>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .center {
+            z-index: 100;
+            position: relative;
+            height: 500px;
+            background: seagreen;
+        }
+        .center .item {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            /* 가로세로사이즈의 2분의 1만 당겨주기
+                top left를 기준으로 */
+            /* margin: -100px 0 0 -100px; */
+            transform: translate(-50%, -50%);
+            /* margin, transform 둘 중에 하나 쓰기
+                transform은 %를 쓸 수 있다 */
+            background: yellowgreen;
+
+            /* text를 가운데 정렬하고 싶을때 */
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</body>
+</html>
