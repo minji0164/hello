@@ -317,3 +317,11 @@
   font-family: 'Line Awesome Free';
   font-weight: 900;
 }
+
+/* 사진 깔고 하는 법 */
+/* body {
+  background: url(../) no-repeat 50% 0;
+}
+.wrap {
+  opacity: 0.8;
+} */
