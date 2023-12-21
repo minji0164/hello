@@ -1,11 +1,31 @@
+/* 전역 변수 설정 */
+/* 피그마의 라이브러리 기능 */
+/* ctrl+f로 검색해서 변수로 전체변경 가능
+  ctrl+shift+f로 파일별로도 바꿀수있음 */
+:root {
+  /* 보통 프라이머리라고 함 */
+  --default: #222328;
+  --primary: #e30512;
+  --white: #fff;
+  --black: #000;
+  /* swiper */
+  --swiper-theme-color: #e90c0c;
+
+  /* 크기변수 */
+  --widthWrap: 1200px;
+  --minHeight: calc(100vh - 100px - 100px - 300px);
+  --hdHeight: 100px;
+  --ftHeight: 100px;
+  --slideHeight: 300px:
+}
 /* reset */
 * {
     margin: 0;
     padding: 0;
     line-height: 1.5;
     text-decoration: none;
-    color: #222328;
-    font-size: 16px;
+    color: var(--default);
+    font-size: 1rem;
     box-sizing: border-box;
     list-style: none;
  }
@@ -22,7 +42,7 @@
 
  .wrap {
     margin: auto;
-    max-width: 1200px;
+    max-width: var(--widthwrap);
  }
 @media screen and (max-width: 980px) {
   .wrap {
@@ -41,7 +61,7 @@
     height: 100px;
 }
  #logo a {
-    font-size: 30px;
+    font-size: 1.875rem;
     display: flex;
     align-items: center;
     width: 200px;
@@ -54,8 +74,11 @@
 /* #gnb .depth1:hover .depth2 전체 메뉴 보이게 */
 /* 각각 메뉴 보이게 */
 #gnb .depth1 li:hover .depth2 {
-  display: block;
-  background: #fff;
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  max-height: 300px;
+  padding: 20px 0;
 }
 
 #gnb .depth1 > li > a {
@@ -67,16 +90,28 @@
 }
 #gnb .depth1 li {
   position: relative;
+  transition: all 0.3s;
+}
+#gnb .depth2:hover {
+  transform: translate();
 }
 #gnb .depth2 {
-  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s;
+  padding: 0;
   text-align: center;
+  max-height: 0;
   right: 0;
   left: 0;
   top: 100px;
   position: absolute;
   z-index: 1000;
-  display: none;
+  /* visibility: hidden;
+  opacity: 0; */
+  /* display: none; */
+  background: var(--white);
 }
 
 #gnb .depth2 a {
@@ -126,7 +161,7 @@
   display: flex;
  }
 .slide ul a {
-    display: block;
+    /* display: block; */
  }
 .slide ul img {
     display: block;
@@ -152,6 +187,51 @@
    font-size: 20px;
  }
 
+ /* bbs */
+ .sec-bbs .list-bbs a {
+   /* padding: 5px 0; */
+   display: block;
+ }
+ .sec-bbs .list-bbs li::before {
+   content: '';
+   width: 5px;
+   height: 5px;
+   margin-right: 10px;
+   display: block;
+   background: ver(--black);
+ }
+ .sec-bbs .list-bbs li {
+   align-items: center;
+   display: flex;
+ }
+ 
+ /* ,를 넣어서 복수클래스로 만들 수 있음 */
+.sec-goto .sec-tit,
+.sec-bnr .sec-tit {
+   margin-top: 0;
+   text-indent: -9999px;
+   line-height: 0;
+   font-size: 0;
+ }
+ .sec-goto .list-goto {
+   align-content: space-between;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   display: flex;
+   height: 100%
+ }
+ .sec-goto .list-goto li {
+   width: 48%;
+   height: 48%;
+   background: thistle;
+ }
+ .sec-goto .list-goto a {
+   height: 100%;
+   text-align: center;
+   line-height: 85px;
+   display: block;
+ }
+ 
  @media screen and (max-width: 980px) {
   #main {
     gap: 0;
@@ -191,55 +271,7 @@
    justify-content: space-between;
    display: flex;
    height: 100px;
- }
-
-
- /* bbs */
- .sec-bbs .list-bbs a {
-   /* padding: 5px 0; */
-   display: block;
- }
- .sec-bbs .list-bbs li::before {
-   content: '';
-   width: 5px;
-   height: 5px;
-   margin-right: 10px;
-   display: block;
-   background: #000;
- }
- .sec-bbs .list-bbs li {
-   align-items: center;
-   display: flex;
- }
- 
- /* ,를 넣어서 복수클래스로 만들 수 있음 */
-.sec-goto .sec-tit,
-.sec-bnr .sec-tit {
-   margin-top: 0;
-   text-indent: -9999px;
-   line-height: 0;
-   font-size: 0;
- }
- .sec-goto .list-goto {
-   align-content: space-between;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   display: flex;
-   height: 100%
- }
- .sec-goto .list-goto li {
-   width: 48%;
-   height: 48%;
-   background: thistle;
- }
- .sec-goto .list-goto a {
-   height: 100%;
-   justify-content: center;
-   align-items: center;
-   display: flex;
- }
- #footer {
-   border-top: 1px solid #000;
+   border-top: 1px solid ver(--black);
  }
 
  @media screen and (max-width: 980px) {
@@ -283,7 +315,7 @@
   border: 1px solid #999;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: #fff;
+  background: ver(--white);
 }
 .modal .modal-hd {
   font-size: 24px;
@@ -302,17 +334,17 @@
   height: 50px;
   border-radius: 50%;
   border: none;
-  color: #fff;
+  color: ver(--white);
   background: #444;
 }
 .modal i {
   /* 두배 단위 */
   font-size: 2rem;
-  color: #fff;
+  color: ver(--white);
 }
 .modal .btn-close::after {
   /* 아이콘 */
-  font-size: 20px;
+  font-size: 1.25rem;
   content: "\f00d";
   font-family: 'Line Awesome Free';
   font-weight: 900;
