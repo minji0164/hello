@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG Animation</title>
+        <style>
+            .cls-1 {
+                fill: #444242;
+            }
+
+            .cls-1,
+            .cls-2 {
+                stroke-width: 0px;
+            }
+
+            .cls-2 {
+                fill: #ff4a4a;
+            }
+            .ani-cls1 {
+                transform: translateX(-334px);
+                animation: aniCls1Key 3s ease-in-out both infinite;
+            }
+            @keyframes aniCls1Key {
+                0% {
+                    transform: translateX(0px);
+                }
+                25% {
+                    transform: translateX(-334px);
+                }
+                100% {
+                    transform: translateX(0px);
+                }
+            }
+            .cls-rotate1 {
+                fill: blueviolet;
+                animation: aniRotate 3s infinite linear both;
+                /* 나를 기준으로 회전 */
+                transform-box: fill-box;
+                /* 나의 중심축을 기준으로 회전 */
+                transform-origin: center;
+            }
+            @keyframes aniRotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1071.8 695.34">
+            <g id="OBJECTS">
+                <g>
+                    <rect class="cls-1" x="389.37" width="334.08" height="222.56" />
+                    <path
+                        class="cls-1"
+                        d="M626.44,235.71c-61.36,0-111.28,49.92-111.28,111.28,0,61.36,49.92,111.28,111.28,111.28v-222.56Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M152.29,0C90.93,0,41.01,49.92,41.01,111.28s49.92,111.28,111.28,111.28h111.28v-111.28C263.58,49.92,213.66,0,152.29,0Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M960.52,695.34c61.36,0,111.28-49.92,111.28-111.28s-49.92-111.28-111.28-111.28h-111.28v111.28c0,61.36,49.92,111.28,111.28,111.28Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M723.33,235.71c-61.36,0-111.28,49.92-111.28,111.28s49.92,111.28,111.28,111.28h111.28v-111.28c0-61.36-49.92-111.28-111.28-111.28Z"
+                    />
+                    <path
+                        class="cls-1 cls-rotate1"
+                        d="M41.01,346.99c0,61.36,49.92,111.28,111.28,111.28s111.28-49.92,111.28-111.28v-111.28h-111.28c-61.36,0-111.28,49.92-111.28,111.28Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M41.01,584.06c0,61.36,49.92,111.28,111.28,111.28,61.36,0,111.28-49.92,111.28-111.28v-111.28s-111.28,0-111.28,0c-61.36,0-111.28,49.92-111.28,111.28Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M389.37,458.27c61.36,0,111.28-49.92,111.28-111.28,0-61.36-49.92-111.28-111.28-111.28h-111.28s0,111.28,0,111.28c0,61.36,49.92,111.28,111.28,111.28Z"
+                    />
+                    <path
+                        class="cls-1"
+                        d="M389.37,0c61.36,0,111.28,49.92,111.28,111.28s-49.92,111.28-111.28,111.28h-111.28v-111.28c0-61.36,49.92-111.28,111.28-111.28Z"
+                    />
+                    <rect class="cls-1" x="849.24" y="111.28" width="222.56" height="346.99" />
+                    <path
+                        class="cls-1"
+                        d="M1071.8,111.28c0,61.36-49.92,111.28-111.28,111.28s-111.28-49.92-111.28-111.28V0h111.28c61.36,0,111.28,49.92,111.28,111.28Z"
+                    />
+                    <rect class="cls-1" x="384.89" y="472.78" width="338.56" height="222.56" />
+                    <path
+                        class="cls-1"
+                        d="M723.44,695.34c-61.36,0-111.28-49.92-111.28-111.28s49.92-111.28,111.28-111.28h111.28v111.28c0,61.36-49.92,111.28-111.28,111.28Z"
+                    />
+                    <circle
+                        class="cls-2 ani-cls1"
+                        cx="723.44"
+                        cy="111.28"
+                        r="111.28"
+                        transform="translate(133.2 544.15) rotate(-45)"
+                    />
+                    <circle
+                        class="cls-2 ani-cls2"
+                        cx="389.37"
+                        cy="584.06"
+                        r="111.28"
+                        transform="translate(-298.95 446.39) rotate(-45)"
+                    />
+                    <rect class="cls-1" x="626.44" y="235.71" width="97.01" height="222.56" />
+                    <rect class="cls-1" x="278.08" y="303.65" width="106.8" height="154.53" />
+                    <rect
+                        class="cls-1"
+                        x="41.01"
+                        y="584.06"
+                        width="222.56"
+                        height="111.28"
+                        transform="translate(304.59 1279.41) rotate(180)"
+                    />
+                </g>
+            </g>
+        </svg>
+    </body>
+</html>

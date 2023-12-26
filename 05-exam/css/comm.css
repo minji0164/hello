@@ -3,36 +3,36 @@
 /* ctrl+f로 검색해서 변수로 전체변경 가능
   ctrl+shift+f로 파일별로도 바꿀수있음 */
 :root {
-  /* 보통 프라이머리라고 함 */
   --default: #222328;
-  --primary: #e30512;
+  --primary: red;
   --white: #fff;
   --black: #000;
-  /* swiper */
-  --swiper-theme-color: #e90c0c;
 
-  /* 크기변수 */
-  --widthWrap: 1200px;
-  --minHeight: calc(100vh - 100px - 100px - 300px);
-  --hdHeight: 100px;
-  --ftHeight: 100px;
-  --slideHeight: 300px:
+  --wrapW: 1200px;
+  --minH: calc(100vh - var(--hdH) - var(--ftH) - var(--slideH));
+  --hdH: 100px;
+  --ftH: 100px;
+  --slideH: 300px;
+
+  /* swiper */
+  --swiper-theme-color: #bcff00;
 }
+
 /* reset */
 * {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    text-decoration: none;
-    color: var(--default);
-    font-size: 1rem;
-    box-sizing: border-box;
-    list-style: none;
- }
+  margin: 0;
+  color: var(--default);
+  padding: 0;
+  line-height: 1.5;
+  text-decoration: none;
+  font-size: 16px;
+  /* 기준폰트 */
+  box-sizing: border-box;
+  list-style: none;
+}
 
- /* 공통 */
- /* 시각장애인에게는 들리고
- 비장애인에게는 보이지 않는 숨김텍스트가 된다. */
+/* 공통 */
+/* 시각장애인에겐 들리고 일반인에겐 보이지 않는 텍스트 */
 .blind {
   position: absolute;
   text-indent: -9999px;
@@ -40,252 +40,319 @@
   line-height: 0;
 }
 
- .wrap {
-    margin: auto;
-    max-width: var(--widthwrap);
- }
+.wrap {
+  /* 최대 1200px까지 */
+  max-width: var(--wrapW);
+  margin: auto;
+  /* background: lightcyan; */
+}
+
 @media screen and (max-width: 980px) {
   .wrap {
     padding: 0 30px;
   }
 }
+
 @media screen and (max-width: 430px) {
   .wrap {
     padding: 0 15px;
- }
+  }
 }
+
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  /* background: lightpink; */
 }
- #logo a {
-    font-size: 1.875rem;
-    display: flex;
-    align-items: center;
-    width: 200px;
-    height: 40px;
- }
+
+#logo a {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  font-size: 1.625rem;
+}
 
 #gnb .depth1 {
   display: flex;
-} 
-/* #gnb .depth1:hover .depth2 전체 메뉴 보이게 */
-/* 각각 메뉴 보이게 */
+  /* gap: 50px; */
+}
+
+#gnb .depth1 li {
+  position: relative;
+}
+
+/* #gnb .depth1:hover .depth2 {}  전체 메뉴 보이게 */
+
+/* 아래는 각각의 메뉴 보이게 */
+
+#gnb .depth1>li>a {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 50px;
+  white-space: nowrap;
+  /* background: red; */
+}
+
+#gnb .depth1>li>a:hover {
+  background: yellowgreen;
+}
+
+/* 마우스 오버시 전체 메뉴 보임 */
+/* #gnb .depth1:hover .depth2 */
+/* (li에) 마우스 오버시 개별 메뉴 보임 */
 #gnb .depth1 li:hover .depth2 {
-  /* display: block; */
   opacity: 1;
   visibility: visible;
   max-height: 300px;
   padding: 20px 0;
 }
 
-#gnb .depth1 > li > a {
-  align-items: center;
-  display: flex;
-  height: 100px;
-  padding: 0 50px;
-  white-space: nowrap;
-}
-#gnb .depth1 li {
-  position: relative;
-  transition: all 0.3s;
-}
-#gnb .depth2:hover {
-  transform: translate();
-}
 #gnb .depth2 {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
   opacity: 0;
   visibility: hidden;
-  overflow: hidden;
   transition: all 0.3s;
-  padding: 0;
-  text-align: center;
-  max-height: 0;
-  right: 0;
-  left: 0;
-  top: 100px;
+  background: #fff;
   position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  /* visibility: hidden;
-  opacity: 0; */
-  /* display: none; */
-  background: var(--white);
+  /* width: 100%; */
+  text-align: center;
 }
 
 #gnb .depth2 a {
-  padding: 3px 0;
   display: block;
+  padding: 3px 0;
 }
 
-/* 타블렛 */
+#gnb .depth2 a:hover {
+  color: red;
+}
+
+/* tablet */
 @media screen and (max-width: 980px) {
   #header {
     height: auto;
     flex-direction: column;
   }
+
   #logo a {
     height: auto;
     padding: 20px 0 10px;
-    /* margin-top: 20px; */
     justify-content: center;
   }
-  #gnb .depth1 > li > a {
+
+  #gnb .depth1>li>a {
     height: 50px;
   }
+
   #gnb .depth2 {
-    top: 50px
+    top: 50px;
   }
 }
+
+/* mobile */
 @media screen and (max-width: 430px) {
-#gnb .depth1 > li > a {
-  padding: 0 25px;
-}
-#gnb {
-  overflow-x: auto;
-  width: 100%;
-}
+  #gnb {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  #gnb .depth1>li>a {
+    padding: 0 20px;
+  }
 }
 
 .slide {
-  height: 300px;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  height: 300px;
 }
 
 .slide ul {
-  left: 0;
-  top: 0;
-  position: absolute;
   display: flex;
- }
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation-name: ani-slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes ani-slide {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 0;
+  }
+  32% {
+    left: -100%;
+  }
+  62% {
+    left: -100%;
+  }
+  64% {
+    left: -200%;
+  }
+  96% {
+    left: -200%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .slide ul a {
-    /* display: block; */
- }
+  /* display: block; */
+  /* background: red; */
+}
+
 .slide ul img {
-    display: block;
-    /* img는 인라인요소라
-    스페이스키가 먹음 블록으로 바꿔줘야한다 */
- }
- #main {
+  display: block;
+  /* 이미지는 inline 요소라 space가 적용됨 */
+}
 
-   justify-content: space-between;
-   display: flex;
-   gap: 20px;
-   height: 200px;
- }
+
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 200px;
+  min-height: var(--minH);
+}
+
 .sec-g {
-   padding: 10px 0;
-   /* width: 33.333%; */
-   flex-grow: 1; 
-   flex-basis: 0;
-   /* 1 : true(참), 0 : false(거짓) */
- }
- .sec-g .sec-tit {
-   margin-top: 10px;
-   font-size: 20px;
- }
+  /* width: 33.333%; */
+  flex-grow: 1;
+  /* 1 : true (참), 0 : false(거짓) */
+  flex-basis: 0;
+  padding: 10px 0;
+  /* border: 1px solid #000; */
+}
 
- /* bbs */
- .sec-bbs .list-bbs a {
-   /* padding: 5px 0; */
-   display: block;
- }
- .sec-bbs .list-bbs li::before {
-   content: '';
-   width: 5px;
-   height: 5px;
-   margin-right: 10px;
-   display: block;
-   background: ver(--black);
- }
- .sec-bbs .list-bbs li {
-   align-items: center;
-   display: flex;
- }
- 
- /* ,를 넣어서 복수클래스로 만들 수 있음 */
+.sec-g .sec-tit {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+/* bbs */
+.sec-bbs .list-bbs li {
+  display: flex;
+  align-items: center;
+}
+
+.sec-bbs .list-bbs li::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  margin-right: 10px;
+  background: red;
+}
+
+.sec-bbs .list-bbs a {
+  display: block;
+  /* padding: 5px 0; */
+}
+
 .sec-goto .sec-tit,
 .sec-bnr .sec-tit {
-   margin-top: 0;
-   text-indent: -9999px;
-   line-height: 0;
-   font-size: 0;
- }
- .sec-goto .list-goto {
-   align-content: space-between;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   display: flex;
-   height: 100%
- }
- .sec-goto .list-goto li {
-   width: 48%;
-   height: 48%;
-   background: thistle;
- }
- .sec-goto .list-goto a {
-   height: 100%;
-   text-align: center;
-   line-height: 85px;
-   display: block;
- }
- 
- @media screen and (max-width: 980px) {
+  margin-bottom: 0;
+  text-indent: -9999px;
+  line-height: 0;
+  font-size: 0;
+}
+
+.sec-goto .list-goto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 100%;
+}
+
+.sec-goto .list-goto li {
+  width: 48%;
+  height: 48%;
+  background: olive;
+}
+
+.sec-goto .list-goto a {
+  display: block;
+  height: 100%;
+  text-align: center;
+  line-height: 85px;
+}
+
+@media screen and (max-width: 980px) {
   #main {
-    gap: 0;
     flex-wrap: wrap;
+    gap: 0;
     height: auto;
   }
+
   .sec-g {
-    flex-grow: 0;
     flex-basis: auto;
+    flex-grow: 0;
   }
+
   .sec-bbs {
     width: 100%;
   }
+
   .sec-bnr,
   .sec-goto {
-    /* gap 20px 빼고 width  */
-    /* width: 48%; */
+    /* gap : 20px 빼고... width 설정 */
     width: calc(100% / 2 - 10px);
   }
- }
- @media screen and (max-width: 430px) {
-  .sec-bnr {
-    width: 100%;
-  }
+}
+
+@media screen and (max-width: 430px) {
+
+  .sec-bnr,
   .sec-goto {
     width: 100%;
   }
+
   .sec-bnr img {
     width: 100%;
     height: 150px;
     object-fit: cover;
   }
- }
+}
 
- #footer {
-   align-items: center;
-   justify-content: space-between;
-   display: flex;
-   height: 100px;
-   border-top: 1px solid ver(--black);
- }
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-top: 1px solid #eee;
+  /* background: lawngreen; */
+}
 
- @media screen and (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #footer {
-    text-align: center;
     display: block;
     height: auto;
     padding: 20px 0;
+    text-align: center;
     background: #eee;
   }
- }
+}
 
-
- .swiper {
+.swiper {
   height: 300px;
 }
 
@@ -296,64 +363,60 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* width: 100%;
-  height: 100%; 이렇게도 할 수 있다.*/
   z-index: 10000;
-  background-color: rgb(0, 0, 0, 0.7);
+  /* width: 100%;
+  height: 100%; */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal {
-  text-align: center;
   position: absolute;
-  left: 50%;
   top: 50%;
-  height: 300px;  
+  left: 50%;
   width: 500px;
-  transform: translate(-50%, -50%);
-  /* 혹은 margin top -150px, left -250px */
+  height: 300px;
+  margin: -150px 0 0 -250px;
+  padding: 50px;
   border-radius: 20px;
   border: 1px solid #999;
-  padding: 30px;
+  text-align: center;
+  background: var(--white);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: ver(--white);
-}
-.modal .modal-hd {
-  font-size: 24px;
-  font-weight: bold;
-}
-.modal .modal-bd {
-  padding-top: 30px;
-}
-.modal .btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: -25px;
-  margin-right: -25px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  color: ver(--white);
-  background: #444;
-}
-.modal i {
-  /* 두배 단위 */
-  font-size: 2rem;
-  color: ver(--white);
-}
-.modal .btn-close::after {
-  /* 아이콘 */
-  font-size: 1.25rem;
-  content: "\f00d";
-  font-family: 'Line Awesome Free';
-  font-weight: 900;
 }
 
-/* 사진 깔고 하는 법 */
+.modal .modal-hd {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border-radius: 50%;
+  border: none;
+  color: var(--white);
+}
+
+.modal .btn-close::after {
+  content: '\f00d';
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.modal i {
+  color: var(--white);
+  font-size: 2rem;
+}
+
 /* body {
-  background: url(../) no-repeat 50% 0;
+  background: url(../m.png) no-repeat 50% 0;
 }
 .wrap {
-  opacity: 0.8;
+  opacity: 0.7;
 } */

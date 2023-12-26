@@ -1,57 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Animation | css</title>
-    </head>
-    <body>
-        <h1>Animation</h1>
-        <div class="box1">
-            <div class="ani"></div>
-        </div>
-        <style>
-            .box1 {
-                position: relative;
-                height: 500px;
-                background: lightgray;
-            }
-            .ani {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 200px;
-                height: 200px;
-                background: red;
-            }
-        </style>
 
-        <div class="box2">
-            <div class="square"></div>
-            <div class="circle"></div>
-        </div>
-        <style>
-            .box2 {
-                position: relative;
-                height: 400px;
-                margin: 400px 0 200px;
-                background: lightgray;
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation | css</title>
+</head>
+
+<body>
+    <h1>Animation</h1>
+    <div class="box1">
+        <div class="ani"></div>
+    </div>
+    <style>
+        .box1 {
+            position: relative;
+            height: 500px;
+            background: lightgray;
+        }
+
+        .ani {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            /* background: red; */
+            animation-name: ani-box;
+            animation-duration: 6s;
+            animation-delay: 2s;
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: alternate; */
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-fill-mode: both;
+        }
+
+        @keyframes ani-box {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+                transform: translate(0, 0);
             }
-            .square {
-                position: absolute;
-                top: 0;
+
+            25% {
+                background-color: yellow;
+                left: calc(100% - 200px);
+                top: 0px;
+                transform: translate(0, 0);
+            }
+
+            50% {
+                background-color: green;
+                left: calc(100% - 200px);
+                top: calc(100% - 200px);
+                transform: translate(0, 0);
+            }
+
+            75% {
+                background-color: blue;
                 left: 0;
-                width: 200px;
-                height: 300px;
-                background: tomato;
+                top: calc(100% - 200px);
+                transform: translate(0, 0);
             }
-            .circle {
-                position: absolute;
-                width: 200px;
-                height: 200px;
-                background: blue;
-                border-radius: 50%;
+
+            100% {
+                background-color: purple;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
-        </style>
-    </body>
+        }
+    </style>
+
+    <div class="box2">
+        <div class="square"></div>
+        <div class="circle"></div>
+    </div>
+    <style>
+        .box2 {
+            position: relative;
+            height: 100vh;
+            margin: 400px 0 200px;
+            background: lightgray;
+        }
+
+        .square {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 300px;
+            background: tomato;
+            animation-name: square;
+            animation-duration: 2s;
+            /* animation-delay: 2s; */
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: both;
+
+        }
+
+        .circle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            border-radius: 50%;
+            animation-name: circle;
+            animation-duration: 2s;
+            /* animation-delay: 2s; */
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: both;
+            
+
+        }
+
+        @keyframes square {
+            100% {
+                /* background-color: purple; */
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @keyframes circle {
+            100% {
+                /* background-color: purple; */
+                left: 50%;
+                top: 50%;
+                transform: translate(-40%, -40%);
+            }
+        }
+    </style>
+</body>
+
 </html>
