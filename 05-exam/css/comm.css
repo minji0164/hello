@@ -341,6 +341,10 @@
   border-top: 1px solid #eee;
   /* background: lawngreen; */
 }
+#footer .logo img {
+  filter: grayscale(100%);
+  /* img 태그만 된다 */
+}
 
 @media screen and (max-width: 980px) {
   #footer {
