@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/comm.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- 제이쿼리 넣어주지 않으면 오류뜸 꼭 라이브러리 위에 두기 제이쿼리는 특히 제일 위쪽-->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script defer src="./js/comm.js"></script>
+  <script src="./js/comm.js"></script>
   <!-- cdn 주소 ㅇ항상 내거 위에 올리기 -->
 </head>
 
@@ -76,7 +77,7 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div> -->
-      
+
     <div class="slide">
       <ul class="list-slide">
         <li>
@@ -99,26 +100,48 @@
 
     <main id="main">
       <!-- 공지사항 섹션 -->
-      <section class="sec-g sec-bbs">
-        <h2 class="sec-tit">공지사항</h2>
-        <ul class="list-bbs">
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-          <li>
-            <a href="#">Lorem ipsum dolor sit amet.</a>
-          </li>
-        </ul>
-      </section>
+      <div id="tabs" class="tabs">
+        <section class="sec-g sec-bbs active">
+          <h2 class="sec-tit">공지사항</h2>
+          <ul class="tab-cont list-bbs">
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li>
+              <a href="#">Lorem ipsum dolor sit amet.</a>
+            </li>
+          </ul>
+        </section>
+        <section class="sec-g sec-gallery ">
+          <h2 class="sec-tit">갤러리</h2>
+          <ul class="tab-cont list-gallery">
+            <li>
+              <a href="#">
+                <img src="./images (2)/images/thumb-gallery.jpg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images (2)/images/thumb-gallery.jpg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images (2)/images/thumb-gallery.jpg" alt="">
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
       <!-- 배너 섹션 -->
       <section class="sec-g sec-bnr">
         <h2 class="sec-tit">배너</h2>
@@ -147,7 +170,7 @@
       </div>
     </footer>
   </div>
-  <div class="dimmed">
+  <div id="modal" class="dimmed">
     <div class="modal">
       <header class="modal-hd">모달 제목</header>
       <main class="modal-bd">
@@ -164,3 +187,4 @@
 </body>
 
 </html>
+<!-- 동적처리하는 건 웬만하면 아이디값 쓰기 -->

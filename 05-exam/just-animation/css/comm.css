@@ -193,21 +193,27 @@
   0% {
     left: 0;
   }
+
   30% {
     left: 0;
   }
+
   32% {
     left: -100%;
   }
+
   62% {
     left: -100%;
   }
+
   64% {
     left: -200%;
   }
+
   96% {
     left: -200%;
   }
+
   100% {
     left: 0;
   }
@@ -233,14 +239,64 @@
   min-height: var(--minH);
 }
 
-.sec-g {
-  /* width: 33.333%; */
+.tabs,
+.sec-bnr,
+.sec-goto {
+  width: 33.333%;
   flex-grow: 1;
   /* 1 : true (참), 0 : false(거짓) */
   flex-basis: 0;
   padding: 10px 0;
   /* border: 1px solid #000; */
 }
+
+.tabs {
+  display: flex;
+  position: relative;
+
+}
+
+.tabs .sec-g {
+  width: 50%;
+}
+
+
+.tabs .list-bbs,
+.tabs .list-gallery {
+  /* display: none; */
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 10px;
+}
+
+.sec-gallery .list-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.tabs .tab-cont {
+  display: none;
+}
+
+.tabs .sec-tit {
+  background: #eee;
+  padding: 5px 0 3px;
+  text-align: center;
+}
+
+.tabs .active .sec-tit {
+  background: red;
+  color: #fff;
+}
+
+.tabs .active .tab-cont {
+  display: flex;
+}
+
 
 .sec-g .sec-tit {
   margin-bottom: 10px;
@@ -266,6 +322,10 @@
   display: block;
   /* padding: 5px 0; */
 }
+
+
+
+
 
 .sec-goto .sec-tit,
 .sec-bnr .sec-tit {
@@ -341,6 +401,7 @@
   border-top: 1px solid #eee;
   /* background: lawngreen; */
 }
+
 #footer .logo img {
   filter: grayscale(100%);
   /* img 태그만 된다 */
@@ -395,6 +456,7 @@
 }
 
 .modal .btn-close {
+  cursor: pointer;
   position: absolute;
   top: -30px;
   right: -30px;
