@@ -183,8 +183,10 @@
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 0.3s;
+}
 
-  animation-name: ani-slide;
+  /* animation-name: ani-slide;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -218,7 +220,7 @@
   100% {
     left: 0;
   }
-}
+} */
 
 .slide ul a {
   /* display: block; */
