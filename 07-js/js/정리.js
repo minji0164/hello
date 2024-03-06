@@ -144,3 +144,126 @@ for (let i = 0; i < hi.length; i++) {
 //   console.log(`${hi.name}의 나이는${hi.age}입니다.`);
 // }
 console.log(`${hi[1].name}의 나이는${hi[1].age}입니다.`);
+
+//----------------------------------------------------------- 2024-03-06
+//함수 선언하기
+function hello() {
+  console.log("hello");
+} //일반함수임(기명함수?)
+
+hello(); //호이스팅이 가능(호이스팅이란 선언문을 코드의 최상단으로 끌어올리는 것)
+
+//함수 표현하기
+const hello2 = function () {
+  console.log("hello2");
+}; //익명함수임
+
+hello2(); //표현식은 호이스팅 불가능
+//-----------------------------------------------------------
+//매개변수(인수를 받는 변수)
+function sum(a, b) {
+  return a + b;
+}
+
+console.log(sum(1, 2)); //인수 지정
+console.log(sum(3)); //인수 지정 3 + undifinde = NaN
+
+//기본값 설정
+function sum(a, b = 5) {
+  return a + b;
+}
+
+console.log(sum(1)); //6 출력됨(1 + 5 = 6)
+//-----------------------------------------------------------
+//객체 구조 분해 할당
+const user = {
+  name: "anna", //문자는 "" 넣는 거 제발 잊지 마
+  age: 10,
+  email: "",
+};
+
+// function getName(props) {
+//   const { name, age } = props; // 구조 분해 할당 사용
+//   // return `${props.name} 나이는 ${props.age}입니다.`; // 구조 분해 할당 전
+//   return `${name} 나이는 ${age}입니다.`; // 구조 분해 할당으로 props 생략 가능해짐
+// } //호출된 거 props로 전달 받음
+// console.log(getName(user)); //user호출
+
+function getName({ name, age, email = "이메일 없음" }) {
+  // const { name, age, email = "이메일 없음" } = props; // 구조 분해 할당 사용
+  // return `${props.name} 나이는 ${props.age}입니다.`; // 구조 분해 할당 전
+  return `${name} 나이는 ${age}입니다. ${email}.`; // 구조 분해 할당으로 props 생략 가능해짐
+} //호출된 거 props로 전달 받음
+console.log(getName(user)); //user호출
+//-----------------------------------------------------------
+//배열 구조 분해 할당
+const arrA = [1, 2, 3];
+
+// function getNum(props) {
+//   const [, b] = props; // 구조 분해 할당 사용
+//   // return props[1]; // 구조 분해 할당 전
+//   return b; //구조 분해 할당 후
+// }
+function getNum([, b]) {
+  // const [, b] = props; // 구조 분해 할당 사용
+  // // return props[1]; // 구조 분해 할당 전
+  return b; //구조 분해 할당 후
+}
+console.log(getNum(arrA));
+//-----------------------------------------------------------
+//나머지 매개변수(전개연산자 이용)
+function sum(...rest) {
+  return rest;
+}
+
+console.log(sum(1, 2, 3, 4, 5, 6)); //인수 지정
+//-----------------------------------------------------------
+//화살표 함수
+// const arrow = () => {}; //기본 구문
+// const arrow = a => {}; //매개변수(a) 하나일 경우 소괄호 생략 가능
+const arrow = (a, b) => {};
+
+// const sum2 = (a, b) => {
+//   return a + b;
+// };
+const sum2 = (a, b) => a + b; // 리턴 축약 가능
+
+console.log(sum2(1, 2));
+//----------------------------
+//화살표 함수의 예시
+//1. 매개변수가 없는 경우
+const aa = () => {};
+
+//2. 매개변수가 하나인 경우
+// const bb = x => {} // 프리티어 때문에 주석 처리함
+
+//3. 매개변수가 여러 개인 경우
+const cc = (x, y) => {};
+
+//4. 리턴이 있는 경우
+const dd = (x, y) => {
+  return x + y;
+};
+//축약형
+const ee = (x, y) => x + y;
+
+//5. 리턴 키워드로 시작하지 않는 경우(리턴처럼 축약 불가능)
+const ff = (x, y) => {
+  console.log(x + y);
+};
+
+//6. 화살표 함수가 객체 데이터를 반환하는 경우
+const gg = () => {
+  return { a: 1, b: 2 };
+};
+//축약형(객체의 중괄호와 화살표 함수의 중괄호가 구분돼야 하므로 소괄호로 감싸주어야 함)
+const hh = () => ({ a: 1, b: 2 });
+
+//7. 화살표 함수가 배열 데이터를 반환하는 경우
+const ii = () => {
+  return [1, 2, 3];
+};
+//축약형
+const jj = () => [1, 2, 3];
+//----------------------------
+//-----------------------------------------------------------
